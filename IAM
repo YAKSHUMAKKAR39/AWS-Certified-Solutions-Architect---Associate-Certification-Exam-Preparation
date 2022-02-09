@@ -1,0 +1,14 @@
+IAM(Identity and Access Management) allows us to manage users and their level of access to the AWS console and the services used.
+
+It offers the following features :
+- Centralized access to our AWS account
+- Shared access to our AWS account
+- Granular permissions
+- Identity Federations
+- Multi factor authentication
+- Temporary access for users/devices and services whereever necessary
+- Allows us to set up our own password rotation policies
+- Integrates with other services
+- Supports PCI DSS compliance
+
+What are users, groups, policies, roles in AWS?
