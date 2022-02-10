@@ -1,18 +1,65 @@
-IAM(Identity and Access Management) allows us to manage users and their level of access to the AWS console and the services used. We use IAM to control who is authenticated (signed in) and authorized (has permissions) to use resources.
+IAM(Identity and Access Management) allows us to manage users and their level of access to the AWS console and the services used. We use IAM to control who is authenticated 
+(signed in) and authorized (has permissions) to use resources.
 
 It offers the following features :
 - Centralized access to our AWS account
-- Shared access to our AWS account
+- Shared access to our AWS account [You can grant other people permission to administer and use resources in your AWS account without having to share your password or access key.]
 - Granular permissions
+- Secure access to AWS resources for applications that run on Amazon EC2
 - Identity Federations
 - Multi factor authentication
 - Temporary access for users/devices and services whereever necessary
 - Allows us to set up our own password rotation policies
 - Integrates with other services
 - Supports PCI DSS compliance
+- Identity information for assurance [If you use AWS CloudTrail, you receive log records that include information about those who made requests for resources in your account. 
+That information is based on IAM identities.]
 
 What are users, groups, policies, roles in AWS?
 Users are basically the end users such as people in the organizations and company employees.
 Groups are a collection of users. Each user in a group will inherit the permissions of the group.
 Policies are the permissions in JSON format which decides the access the users, groups or roles will have.
-Roles are an AWS Identity and Access Management (IAM) entity with permissions to make AWS service requests. IAM roles cannot make direct requests to AWS services; they are meant to be assumed by authorized entities, such as IAM users, applications, or AWS services such as EC2.
+Roles are an AWS Identity and Access Management (IAM) entity with permissions to make AWS service requests. IAM roles cannot make direct requests to AWS services; they are 
+meant to be assumed by authorized entities, such as IAM users, applications, or AWS services such as EC2.
+
+IAM achieves high availability by replicating data across multiple servers within Amazon's data centers around the world. If a request to change some data is successful, the 
+change is committed and safely stored. However, the change must be replicated across IAM, which can take some time. Such changes include creating or updating users, groups, 
+roles, or policies. We recommend that you do not include such IAM changes in the critical, high-availability code paths of your application. Instead, make IAM changes in a 
+separate initialization or setup routine that you run less frequently. Also, be sure to verify that the changes have been propagated before production workflows depend on them.
+
+You can work with AWS Identity and Access Management in any of the following ways.
+- AWS Management Console
+- AWS Command Line Tools
+- AWS SDKs
+- IAM HTTPS API
+
+Terms : 
+IAM Resources
+The user, group, role, policy, and identity provider objects that are stored in IAM. As with other AWS services, you can add, edit, and remove resources from IAM.
+
+IAM Identities
+The IAM resource objects that are used to identify and group. You can attach a policy to an IAM identity. These include users, groups, and roles.
+
+IAM Entities
+The IAM resource objects that AWS uses for authentication. These include IAM users and roles.
+
+Principals
+A person or application that uses the AWS account root user, an IAM user, or an IAM role to sign in and make requests to AWS. Principals include federated users and 
+assumed roles.
+
+Request
+When a principal tries to use the AWS Management Console, the AWS API, or the AWS CLI, that principal sends a request to AWS. The request includes the following information:
+
+Actions or operations – The actions or operations that the principal wants to perform. This can be an action in the AWS Management Console, or an operation in the AWS CLI or 
+AWS API.
+
+Resources – The AWS resource object upon which the actions or operations are performed.
+
+Principal – The person or application that used an entity (user or role) to send the request. Information about the principal includes the policies that are associated with the 
+entity that the principal used to sign in.
+
+Environment data – Information about the IP address, user agent, SSL enabled status, or the time of day.
+
+Resource data – Data related to the resource that is being requested. This can include information such as a DynamoDB table name or a tag on an Amazon EC2 instance.
+
+AWS gathers the request information into a request context, which is used to evaluate and authorize the request.
