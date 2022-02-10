@@ -1,4 +1,4 @@
-IAM(Identity and Access Management) allows us to manage users and their level of access to the AWS console and the services used.
+IAM(Identity and Access Management) allows us to manage users and their level of access to the AWS console and the services used. We use IAM to control who is authenticated (signed in) and authorized (has permissions) to use resources.
 
 It offers the following features :
 - Centralized access to our AWS account
@@ -12,3 +12,7 @@ It offers the following features :
 - Supports PCI DSS compliance
 
 What are users, groups, policies, roles in AWS?
+Users are basically the end users such as people in the organizations and company employees.
+Groups are a collection of users. Each user in a group will inherit the permissions of the group.
+Policies are the permissions in JSON format which decides the access the users, groups or roles will have.
+Roles are an AWS Identity and Access Management (IAM) entity with permissions to make AWS service requests. IAM roles cannot make direct requests to AWS services; they are meant to be assumed by authorized entities, such as IAM users, applications, or AWS services such as EC2.
