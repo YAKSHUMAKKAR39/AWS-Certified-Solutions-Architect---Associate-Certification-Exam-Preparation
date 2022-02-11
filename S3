@@ -1,0 +1,22 @@
+Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance. 
+- It is an object based storage i.e. it allows you to upload files
+- The data is spread across multiple devices and facilities.
+- Files can be from 0 bytes to 5TB with unlimited storage
+- It is a universal namespace i.e names must be unique globally.
+- When you upload a file to S3 you will receive a HTTP 200 code if the upload was successful.
+
+-S3 objects-
+Think of objects just as files. Objects consists of the following :
+- Key [The name of the object]
+- Value [The data and is made of sequence of bytes]
+- Version ID [Important for versioning]
+- Metadata [Data about data you are storing]
+- Subresources :
+  - Access Control Lists [Permissions to objects of a bucket]
+  - Torrent
+
+How does data consistency works for S3? [-S3 DATA CONSISTENCY MODEL-]
+- Read after write consistency for PUTS of new objects [If you write a new file and read it immediately afterwards, you will be able to view that data]
+- Eventual consistency for overwrite PUTS and DELETES, can take some time [If you update an EXISTING FILE or delete a file and read it immediately, you may get the older version
+or you may not. Basically, changes to an object can take a little time to propagate]
+
