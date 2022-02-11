@@ -66,8 +66,24 @@ How we are charged for S3?
 - Requests 
 - Storage Management Pricing
 - Data Transparency
-- Tranfer Acceleration
+- Tranfer Acceleration [Amazon S3 Transfer Acceleration is a bucket-level feature that enables fast, easy, and secure transfers of files over long distances between your client
+                        and an S3 bucket. Transfer Acceleration takes advantage of the globally distributed edge locations in Amazon CloudFront. As the data arrives at an edge 
+                        location, the data is routed to Amazon S3 over an optimized network path.]
+                        Why use Transfer Acceleration?
+                        You might want to use Transfer Acceleration on a bucket for various reasons:
+                        - Your customers upload to a centralized bucket from all over the world.
+                        - You transfer gigabytes to terabytes of data on a regular basis across continents.
+                        - You can't use all of your available bandwidth over the internet when uploading to Amazon S3.
 - Cross Region Replication [To automatically replicate new objects as they are written to the bucket use live replication, such as Same-Region Replication (SRR) or Cross-Region
                             Replication (CRR).To enable SRR or CRR, you add a replication configuration to your source bucket. The minimum configuration must provide the following:
                              - The destination bucket or buckets where you want Amazon S3 to replicate objects
                              - An AWS Identity and Access Management (IAM) role that Amazon S3 can assume to replicate objects on your behalf]
+
+Note : Since, S3 is an object storage its not suitable to install an OS or a database on. For that we will want block based storage.
+       When you view your bucket, view them globally but you can have bucket in individual regions.
+       Restricting Bucket Access :
+       - Bucket Policies 
+       - Object Policies
+       - IAM policies to users and groups
+       
+S3 storage class in decreasing order of their cost : S3 Standard > S3-IA > S3 Intelligent Tiering > S3 One Zone IA > S3 Glacier > S3 Glacier Deep Archive
