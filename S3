@@ -20,3 +20,54 @@ How does data consistency works for S3? [-S3 DATA CONSISTENCY MODEL-]
 - Eventual consistency for overwrite PUTS and DELETES, can take some time [If you update an EXISTING FILE or delete a file and read it immediately, you may get the older version
 or you may not. Basically, changes to an object can take a little time to propagate]
 
+-S3 guarantees :-
+- Built for 99.99% availability for S3 platform
+- Amazon guarantees 99.9% avalability
+- Amazon guarantees 99.99999999999% durability for S3 information (Remember 11*9's)
+
+Features of S3 :
+- Tiered Storage Classes
+- Storage management
+  - S3 Lifecycle
+  - S3 Object Lock
+  - S3 Replication
+  - S3 Batch Operations [Manage billions of objects at scale with a single S3 API request or a few clicks in the Amazon S3 console. You can use Batch Operations to perform 
+                         operations such as Copy, Invoke AWS Lambda function, and Restore on millions or billions of objects.]
+- Versioning 
+- Encryption
+- MFA Delete
+- Access management
+  - S3 Block Public Access
+  - AWS Identity and Access Management (IAM)
+  - Bucket policies
+  - Access control lists (ACLs)
+  - S3 Object Ownership
+  - Access Analyzer for S3
+- Data processing
+  - S3 Object Lambda
+  - Event notifications 
+- Storage logging and monitoring
+  - Amazon CloudWatch metrics for Amazon S3
+  - AWS CloudTrail
+  
+-S3 Storage Classes-
+- S3 Standard [99.99 availability, 99.99999999999% durability, stored redundantly across multiple devices in multiple facilities and designed to loss of 2 facilities 
+             concurrently.] 
+- S3-IA(Infrequently Accessed) [For data that is accessed les frequently, but requires rapid action when needed. Lower fee than S3 but you are charged a retrieval fee. Sometimes
+                                refered to as Reduced Redundancy Storage.]
+- S3 One Zone-IA [For where you want a lower cost option for infrequenty accessed data, but do not require the multiple AZ data resiliency]
+- S3 Intelligent Tiering [Designed to optimize costs by automatically moving data to most cost effective access tier, without performance impact or operational overhead]
+- S3 Glacier [It is secure, durable and low cost storage class for data archiving. You can reliably tore any amount of data at costs that are competitive with or cheaper than 
+               on-premises solutions. Retrieval time configurable from minutes to hours]
+- S3 Glacier Deep Archive [Amazon S3's owest cost storage class where a retrieval time of 12 hrs is acceptable]
+
+How we are charged for S3?
+- Storage
+- Requests 
+- Storage Management Pricing
+- Data Transparency
+- Tranfer Acceleration
+- Cross Region Replication [To automatically replicate new objects as they are written to the bucket use live replication, such as Same-Region Replication (SRR) or Cross-Region
+                            Replication (CRR).To enable SRR or CRR, you add a replication configuration to your source bucket. The minimum configuration must provide the following:
+                             - The destination bucket or buckets where you want Amazon S3 to replicate objects
+                             - An AWS Identity and Access Management (IAM) role that Amazon S3 can assume to replicate objects on your behalf]
