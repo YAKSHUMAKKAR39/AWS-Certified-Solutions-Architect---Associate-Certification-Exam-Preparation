@@ -103,3 +103,11 @@ Encryption at rest(Server side) is achieved by :
 - AWS Key management service, managed keys - SSE-KMS         AWS+Customer Key
 - Server Side Encryption with customer provided keys - SSE-C Customer Key
 Client side Encryption
+
+-S3 Version Control/Versioning-
+Using versioning with S3
+- Stores all versions of an object (including all writes and even if you delete an object)
+- Great backup tool
+- Once enabled, versioning can not be disabled, only suspended
+- Integrates with lifecycle rules
+- Versioning's MFA Delete capability, which uses MFA, can be used to provide an additional layer of security.
