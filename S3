@@ -111,3 +111,8 @@ Using versioning with S3
 - Once enabled, versioning can not be disabled, only suspended
 - Integrates with lifecycle rules
 - Versioning's MFA Delete capability, which uses MFA, can be used to provide an additional layer of security.
+
+-S3 Lifecycle management and glacier-
+- Automates moving your objects between different storage tiers
+- Can be used in conjuction with versioning
+- Can be applied to current version and previous versions.
