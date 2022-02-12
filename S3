@@ -87,3 +87,19 @@ Note : Since, S3 is an object storage its not suitable to install an OS or a dat
        - IAM policies to users and groups
        
 S3 storage class in decreasing order of their cost : S3 Standard > S3-IA > S3 Intelligent Tiering > S3 One Zone IA > S3 Glacier > S3 Glacier Deep Archive
+
+-S3 Security and Encryption-
+By default, all newly created buckets are PRIVATE. You can setup access control to your buckets by using :
+- Bucket policies at bucket level
+- ACL's at object level
+Note : S3 buckets can be configured to create access logs which log all the requests made to the S3 bucket. This can be sent to another bucket and even another 
+in another account.
+
+-Encryption Ways-
+Encryption in Transit is achieved by :
+- SSL/TLS
+Encryption at rest(Server side) is achieved by :
+- S3 Managed Keys - SSE-S3 (Server side encryption - S3)     AWS Key
+- AWS Key management service, managed keys - SSE-KMS         AWS+Customer Key
+- Server Side Encryption with customer provided keys - SSE-C Customer Key
+Client side Encryption
